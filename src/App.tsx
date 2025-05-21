@@ -1,1 +1,55 @@
-import React from "react"; import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; import { ThemeProvider, createTheme, CssBaseline, Container, Box } from "@mui/material"; import Header from "./components/Header"; import Home from "./components/Home"; import About from "./components/About"; import TestSupabase from "./components/TestSupabase"; const theme = createTheme({ palette: { primary: { main: "#1976d2" }, secondary: { main: "#dc004e" }, background: { default: "#f5f5f5" } }, typography: { h4: { fontWeight: 600 }, h6: { fontWeight: 600 } } }); const App: React.FC = () => { return ( <ThemeProvider theme={theme}> <CssBaseline /> <Router> <Box sx={{ minHeight: "100vh", backgroundColor: "background.default" }}> <Header /> <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}> <Routes> <Route path="/" element={<TestSupabase />} /> <Route path="/about" element={<About />} /> </Routes> </Container> </Box> </Router> </ThemeProvider> ); }; export default App;
+import { useEffect, useState } from 'react';
+import { initializeCertifications, initializeTopics } from './utils/initializeData';
+import { Box, CircularProgress, Container, Typography } from '@mui/material';
+import CertificationList from './components/CertificationList';
+import Header from './components/Header';
+
+function App() {
+  const [initializing, setInitializing] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function initializeData() {
+      try {
+        setInitializing(true);
+        const certifications = await initializeCertifications();
+        if (certifications) {
+          await initializeTopics(certifications);
+        }
+        setInitializing(false);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'An error occurred');
+        setInitializing(false);
+      }
+    }
+
+    initializeData();
+  }, []);
+
+  if (initializing) {
+    return (
+      <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh">
+        <CircularProgress />
+      </Box>
+    );
+  }
+
+  if (error) {
+    return (
+      <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh">
+        <Typography color="error">{error}</Typography>
+      </Box>
+    );
+  }
+
+  return (
+    <>
+      <Header />
+      <Container maxWidth="lg" sx={{ mt: 4 }}>
+        <CertificationList />
+      </Container>
+    </>
+  );
+}
+
+export default App;
