@@ -1,4 +1,4 @@
-# 🧠 Certification Study Platform
+# 🧠 Supabase MySQL for Certification Study Platform
 
 A static HTML/JavaScript web app designed to help users prepare for technical certifications. Now enhanced with Supabase for dynamic content, quiz tracking, and user progress.
 
