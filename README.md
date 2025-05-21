@@ -176,19 +176,6 @@ certification-study-platform/
 4. Push to the branch
 5. Open a pull request
 
-## 📝 License
-
-This project is licensed under the MIT License.
-
-## 🙏 Acknowledgments
-
-- Supabase team for the excellent BaaS platform
-- The open-source community
-- All contributors and testers
-
-## 📞 Support
-
-For support or questions, please open an issue in the GitHub repository or contact the maintainers directly.
 
 ---
 
