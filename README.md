@@ -1,46 +1,195 @@
-# Getting Started with Create React App
+# 🧠 Certification Study Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A static HTML/JavaScript web app designed to help users prepare for technical certifications. Now enhanced with Supabase for dynamic content, quiz tracking, and user progress.
 
-## Available Scripts
+## 🔗 Live Site
+https://rvale92.github.io/certification-study-platform
 
-In the project directory, you can run:
+## 📁 Project Structure
+```bash
+.
+├── index.html                # Main HTML page
+├── style.css                # Stylesheet
+├── scripts.js               # Main JavaScript (frontend logic)
+├── supabase/
+│   ├── supabaseClient.js    # Supabase client setup
+│   └── helpers.js           # Helper functions to fetch and save data
+├── test_supabase_integration.html  # Manual test page for Supabase
+└── README.md
+```
 
-### `npm start`
+## 🧰 Tech Stack
+- HTML/CSS/JavaScript
+- Supabase (for backend-as-a-service)
+- GitHub Pages (for static hosting)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## ⚙️ How to Use / Develop
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. **Clone the repo:**
+   ```bash
+   git clone https://github.com/rvale92/certification-study-platform.git
+   cd certification-study-platform
+   ```
 
-### `npm test`
+2. **Update Supabase Credentials:**
+   - Open `supabase/supabaseClient.js`
+   - Replace with your actual `SUPABASE_URL` and `SUPABASE_ANON_KEY`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. **Run locally:**
+   Since it's a static site, you can open `index.html` directly in your browser or use a local dev server:
+   ```bash
+   npx serve .
+   ```
 
-### `npm run build`
+4. **Test Supabase connection:**
+   Open `test_supabase_integration.html` in your browser to verify database fetches.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧪 Supabase Features
+- Stores quizzes and certification data
+- Tracks user scores and progress
+- Uses JSON for quiz questions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛡️ Git Snapshots
+- Before Supabase: `backup-before-supabase-setup`
+- After integration: `supabase-integration-setup`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Deployment
+This site is auto-deployed using GitHub Pages from the main branch. To deploy changes:
 
-### `npm run eject`
+```bash
+git add .
+git commit -m "Update"
+git push
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🌟 Features
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Multiple Certification Paths**
+  - JNCIA (Juniper Networks)
+  - CCNA (Cisco)
+  - Security+ (CompTIA)
+  - SC-205 (Microsoft)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- **Interactive Learning Tools**
+  - Detailed topic breakdowns
+  - Practice quizzes
+  - Progress tracking
+  - Performance analytics
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 🛠️ Tech Stack
 
-## Learn More
+- **Frontend**
+  - React 18
+  - TypeScript
+  - Vite
+  - Material-UI (MUI)
+  - React Router
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Backend**
+  - Supabase
+  - PostgreSQL with RLS (Row Level Security)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📦 Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+- Git
+
+## 🚀 Getting Started
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/rvale92/Supabase_learning.git
+   cd Supabase_learning
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Environment Setup**
+   Create a `.env` file in the root directory:
+   ```env
+   VITE_SUPABASE_URL=https://mkivdveacuoazqgaigah.supabase.co
+   VITE_SUPABASE_ANON_KEY=your_anon_key
+   ```
+
+4. **Start Development Server**
+   ```bash
+   npm run dev
+   ```
+
+## 📚 Project Structure
+
+```
+certification-study-platform/
+├── src/
+│   ├── components/     # React components
+│   ├── supabase/      # Supabase client and configs
+│   ├── types/         # TypeScript definitions
+│   ├── utils/         # Utility functions
+│   └── App.tsx        # Main application component
+├── public/            # Static assets
+└── vite.config.ts     # Vite configuration
+```
+
+## 🗄️ Database Schema
+
+### Tables
+
+1. **certifications**
+   - Stores certification metadata
+   - Includes exam details, prerequisites, and validity
+
+2. **topics**
+   - Links to certifications
+   - Contains detailed study materials
+   - Tracks topic weightage
+
+3. **quizzes**
+   - Practice questions and answers
+   - Performance tracking
+   - Time limits and scoring
+
+## 🔒 Security Features
+
+- Row Level Security (RLS) implementation
+- Secure authentication flow
+- Protected API endpoints
+- Environment variable management
+
+## 🎯 Roadmap
+
+- [ ] User authentication and profiles
+- [ ] Study progress tracking
+- [ ] Interactive flashcards
+- [ ] Mobile responsiveness
+- [ ] Offline mode support
+- [ ] Performance analytics dashboard
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a pull request
+
+## 📝 License
+
+This project is licensed under the MIT License.
+
+## 🙏 Acknowledgments
+
+- Supabase team for the excellent BaaS platform
+- The open-source community
+- All contributors and testers
+
+## 📞 Support
+
+For support or questions, please open an issue in the GitHub repository or contact the maintainers directly.
+
+---
+
+Made with ❤️ by Reimundo Valentin
