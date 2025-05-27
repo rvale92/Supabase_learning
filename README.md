@@ -24,10 +24,11 @@ Git: To clone the repository.
 Docker Engine & Docker Compose: Must be installed and running on your system (e.g., Docker Desktop).
 
 📥 1. Clone the Repository
-Bash
 
-```git clone https://github.com/rvale92/Supabase_learning.git
-cd Supabase_learning
+```Bash
+
+git clone https://github.com/rvale92/Supabase_learning.git
+cd Supabase_learning```
 
 # 🔑 2. Environment Configuration (Supabase Backend Connection)
 This is CRUCIAL! The React application inside the Docker container needs to connect to your Supabase backend.
