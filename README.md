@@ -20,8 +20,8 @@ A comprehensive study platform for IT certification preparation, focusing on JNC
 
 ```bash
 # Clone and run
-git clone https://github.com/rvale92/certification-study-platform.git
-cd certification-study-platform
+git clone https://github.com/rvale92/Supabase_learning.git
+cd Supabase_learning
 docker compose up --build
 ```
 
