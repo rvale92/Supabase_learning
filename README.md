@@ -10,23 +10,26 @@ This Docker setup provides a consistent and isolated environment to:
 ⚙️ MANAGE the application lifecycle through Docker Compose.
 The containerized application is intended to connect to an external Supabase backend for its data and dynamic features. Configuration for this connection is managed via environment variables passed to the Docker container.
 
-🛠️ Tech Stack (Containerization Focus)
+# 🛠️ Tech Stack (Containerization Focus)
 Docker: Core containerization platform.
 Docker Compose: Tool for defining and running multi-container Docker applications.
 Nginx: Web server used to serve the built React application from within a Docker container.
 React & TypeScript: The application code that is BUILT AND SERVED by this Docker environment.
-🚀 Docker Setup and Usage ⚙️
+
+# 🚀 Docker Setup and Usage ⚙️
 Follow these steps to get the Dockerized Certification Study Platform running QUICKLY AND EASILY!
 
 ✅ Prerequisites
 Git: To clone the repository.
 Docker Engine & Docker Compose: Must be installed and running on your system (e.g., Docker Desktop).
+
 📥 1. Clone the Repository
 Bash
 
-git clone https://github.com/rvale92/Supabase_learning.git
+```git clone https://github.com/rvale92/Supabase_learning.git
 cd Supabase_learning
-🔑 2. Environment Configuration (Supabase Backend Connection)
+
+# 🔑 2. Environment Configuration (Supabase Backend Connection)
 This is CRUCIAL! The React application inside the Docker container needs to connect to your Supabase backend.
 
 📝 Create a .env file in the root directory of the project (Supabase_learning/.env).
@@ -42,16 +45,20 @@ VITE_SUPABASE_ANON_KEY=your_actual_supabase_anon_key
 IMPORTANT NOTE: ⚠️ Replace your_actual_supabase_url and your_actual_supabase_anon_key with YOUR project's specific credentials from your Supabase dashboard.
 
 🏗️ 3. Build and Run the Docker Container(s) 🔥
+
 docker-compose.yml orchestrates this magic!
 
-Bash
+```Bash
 
 docker compose up --build
 --build: Forces Docker to rebuild the image(s) if the Dockerfile or related context has changed. Omit this to start faster if no code/config changes were made.
+
 To run in detached mode (background):
-Bash
+
+```Bash
 
 docker compose up --build -d
+
 🔗 4. Accessing the Application 🌐
 Once the Docker containers are UP AND RUNNING, the platform will be accessible via your web browser:
 
@@ -59,10 +66,12 @@ Once the Docker containers are UP AND RUNNING, the platform will be accessible v
 (Verify the port in your docker-compose.yml under the ports section for the Nginx/app service.)
 
 ⚙️ 5. Managing the Dockerized Application
+
 🛑 Stopping the Application:
+
 To stop AND REMOVE the containers, networks, and volumes:
 
-Bash
+```Bash
 
 docker compose down
 To ONLY STOP the running containers without removing them:
