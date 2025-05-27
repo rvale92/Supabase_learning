@@ -115,3 +115,12 @@ docker compose up --build
 * Client-side routing support
 
 ## 🗂️ Relevant Project Files
+
+Supabase_learning/
+├── Dockerfile # Blueprint for the image
+├── docker-compose.yml # Service definitions
+├── .env # (Gitignored) Local config
+├── .env.example # Environment template
+└── nginx/ # Nginx configurations
+└── default.conf # Server config
+
