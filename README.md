@@ -1,4 +1,5 @@
-🐳 Dockerized Certification Study Platform 🚀
+# 🐳 Dockerized Certification Study Platform 🚀
+
 This document provides ALL THE DETAILS for building, running, and managing the Dockerized environment for the 📚 Certification Study Platform. The platform itself is a React/TypeScript application designed for IT certification preparation. This README focuses SOLELY on its containerization using Docker and Nginx.
 
 ℹ️ Docker Environment Overview
