@@ -1,6 +1,5 @@
-Okay, here's a README version strictly focused on the Docker containerization aspect of your "Certification Study Platform" project.
-
 Dockerized Certification Study Platform
+
 This document provides instructions and details for building, running, and managing the Dockerized environment for the Certification Study Platform. The platform itself is a React/TypeScript application designed for IT certification preparation. This README focuses solely on its containerization using Docker and Nginx.
 
 Docker Environment Overview
